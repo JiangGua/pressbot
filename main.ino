@@ -7,7 +7,7 @@ int PIN_IR_RECEIVER = 9;  // 红外接收器
 int PIN_MOTOR_RED = 10;   // 输出到电机红色线的控制端子
 int PIN_MOTOR_BLK = 11;   // 输出到电机黑色线的控制端子
 
-int MS_MOTOR_RUN = 350;  // 电机收回前等待时间 (毫秒 ms)
+int MS_MOTOR_RUN = 1200;  // 电机收回前等待时间 (毫秒 ms)
 
 void setup() {
   /* 初始化红外遥控 */
