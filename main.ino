@@ -1,6 +1,3 @@
-// 启用调试模式
-#define DEBUG
-
 #include <IRremote.h>
 
 int PIN_IR_RECEIVER = 9;  // 红外接收器
