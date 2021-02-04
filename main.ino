@@ -7,7 +7,7 @@ int PIN_IR_RECEIVER = 9;  // 红外接收器
 int PIN_MOTOR_RED = 10;   // 输出到电机红色线的控制端子
 int PIN_MOTOR_BLK = 11;   // 输出到电机黑色线的控制端子
 
-int MS_MOTOR_RUN = 1200;  // 电机收回前等待时间 (毫秒 ms)
+int MS_MOTOR_RUN = 1300;  // 电机收回前等待时间 (毫秒 ms)
 
 void setup() {
   /* 初始化红外遥控 */
@@ -15,6 +15,12 @@ void setup() {
   /* 初始化电机控制针脚 */
   pinMode(PIN_MOTOR_RED, OUTPUT);
   pinMode(PIN_MOTOR_BLK, OUTPUT);
+  // 初始化: 收回电机
+  digitalWrite(PIN_MOTOR_RED, LOW);
+  digitalWrite(PIN_MOTOR_BLK, HIGH);
+  delay(MS_MOTOR_RUN);
+  // 电机停转
+  digitalWrite(PIN_MOTOR_BLK, LOW);
 #ifdef DEBUG
   /* 调试用串口监视器 */
   Serial.begin(9600);
